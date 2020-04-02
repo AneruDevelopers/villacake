@@ -1,15 +1,21 @@
 <?php
     use Model\Storage;
 ?>
+<div class="wrapperAdjusterDiv">
 <div class="topNavCity">
     <h6 class="linkMenuTopNavCityMobile linkArm" id="myBtnArmazemMobile" title="Veja os armazéns disponíveis">
         <i class="fas fa-globe-americas"></i> <span class="armName"><?= isset($_SESSION[Storage::SESSION]['arm_cm']) ? $_SESSION[Storage::SESSION]['arm_cm'] : $_SESSION[Storage::SESSION]['arm']; ?></span>
     </h6>
 </div>
 <div class="companyNameSpace">
-    <h1 class="comapanyName"><a class="linkCompanyName" href="<?= Project::baseUrlPhp(); ?>"><img src="<?= Project::baseUrl(); ?>style/img/banner/logoPadrao.png" alt="e.conomize - Mercado digital" title="e.conomize - Mercado digital"></a></h1>
+    <a class="linkCompanyName" href="<?= Project::baseUrlPhp(); ?>">
+        <img src="<?= Project::baseUrl(); ?>style/img/banner/VillaCakeLog.png" alt="Villa Cake - Confeitaria online" title="Villa Cake - Bolos e Doces">
+    </a>
 </div>
-<div class="searchSpace">
+<div class="headerMenuDiv">
+
+</div>
+<!-- <div class="searchSpace">
     <div class="searchBoxHeader" id="searchBoxHeader">
         <form class="formPesquisaHeader" method="get" action="<?= Project::baseUrlPhp(); ?>pesquisa">
             <input class="pesquisaTxtHeader" value="<?= isset($_GET['q']) ? $_GET['q'] : '' ; ?>" type="text" name="q" placeholder=" Clique e pesquise" title="Pesquise por produtos">
@@ -18,8 +24,8 @@
             </button>
         </form>
     </div>
-</div>
-<ul class="menuTopNav">
+</div> -->
+<!-- <ul class="menuTopNav">
     <li class="celulaTopNavCity linkArm" id="myBtnArmazem" title="Veja os armazéns disponíveis">
         <a class="linkMenuTopNavCity" href="#">
             <span class="armName"><?= isset($_SESSION[Storage::SESSION]['arm_cm']) ? $_SESSION[Storage::SESSION]['arm_cm'] : $_SESSION[Storage::SESSION]['arm']; ?></span>
@@ -45,4 +51,5 @@
 <ul class="menuTopNavMobile">
   <li class="celulaTopNavMobile"><a class="linkMenuTopNavMobile" href="#" id="myBtn"><i class="far fa-user-circle"></i></a></li>
   <li class="celulaTopNavMobile"><a class="linkMenuTopNavMobile" href="<?= Project::baseUrlPhp(); ?>compra/procedimento"><i class="fas fa-shopping-cart"></i></a></li>
-</ul>
+</ul> -->
+</div>

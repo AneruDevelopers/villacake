@@ -2,6 +2,104 @@
 
 $(document).ready(function() {
   
+    // $('.owl-carousel').owlCarousel({
+    //     loop:true,
+    //     // margin:10,
+    //     responsiveClass:true,
+    //     responsive:{
+    //         0:{
+    //             items:1,
+    //             nav:true
+    //         },
+    //         600:{
+    //             items:3,
+    //             nav:false
+    //         },
+    //         1000:{
+    //             items:5,
+    //             nav:true,
+    //             loop:false
+    //         }
+    //     }
+    // })
+
+    // $(".owl-carousel").owlCarousel();
+
+    $('.loopCarousel').owlCarousel({
+        items:2,
+        loop:true,
+        dots:false,
+        nav:true,
+        margin:10,
+        navContainer: '.custom-nav',
+        responsiveClass:true,
+        navText: [
+            '<i class="iconNavOnCarousel fa fa-angle-left" aria-hidden="true"></i>',
+            '<i class="iconNavOnCarousel fa fa-angle-right" aria-hidden="true"></i>'
+        ],
+        responsive:{
+            321:{
+                items:3
+            },
+            768:{
+                items:4
+            },
+            1500:{
+                items:5
+            }
+        }
+    });
+
+    $('.loopCarousel2').owlCarousel({
+        items:2,
+        loop:true,
+        dots:false,
+        nav:true,
+        margin:10,
+        navContainer: '.custom-nav2',
+        responsiveClass:true,
+        navText: [
+            '<i class="iconNavOnCarousel fa fa-angle-left" aria-hidden="true"></i>',
+            '<i class="iconNavOnCarousel fa fa-angle-right" aria-hidden="true"></i>'
+        ],
+        responsive:{
+            321:{
+                items:3
+            },
+            768:{
+                items:4
+            },
+            1500:{
+                items:5
+            }
+        }
+    });
+
+    $('.loopCarousel3').owlCarousel({
+        items:2,
+        loop:true,
+        dots:false,
+        nav:true,
+        margin:10,
+        navContainer: '.custom-nav3',
+        responsiveClass:true,
+        navText: [
+            '<i class="iconNavOnCarousel fa fa-angle-left" aria-hidden="true"></i>',
+            '<i class="iconNavOnCarousel fa fa-angle-right" aria-hidden="true"></i>'
+        ],
+        responsive:{
+            321:{
+                items:3
+            },
+            768:{
+                items:4
+            },
+            1500:{
+                items:5
+            }
+        }
+    });
+    
     $('.owl-one').owlCarousel({
       loop:false,
       margin:5,
@@ -63,19 +161,19 @@ $(document).ready(function() {
       singleItem:true
   });
 
-  $('.loop').owlCarousel({
-      center: false,
-      items:4,
-      loop:false,
-      margin:8,
-      dots:false,
-      nav:false,
-      responsive:{
-          600:{
-              items:7
-          }
-      }
-  });
+//   $('.loop').owlCarousel({
+//       center: false,
+//       items:4,
+//       loop:false,
+//       margin:8,
+//       dots:false,
+//       nav:false,
+//       responsive:{
+//           600:{
+//               items:7
+//           }
+//       }
+//   });
   
 });
 
@@ -164,26 +262,26 @@ $("#myBtn").click(function() {
     $(".help-block-login").html("");
 });
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
+// // When the user clicks on <span> (x), close the modal
+// span.onclick = function() {
+//   modal.style.display = "none";
+// }
 
 // MODAL DE LOGIN
 
-var modal1 = document.getElementById('myModal');
+// var modal1 = document.getElementById('myModal');
 
-var btn1 = document.getElementById("myBtn2");
+// var btn1 = document.getElementById("myBtn2");
 
-var span1 = document.getElementsByClassName("close")[0];
+// var span1 = document.getElementsByClassName("close")[0];
 
-btn1.onclick = function() {
-    modal1.style.display = "block";
-}
+// btn1.onclick = function() {
+//     modal1.style.display = "block";
+// }
 
-span1.onclick = function() {
-    modal1.style.display = "none";
-}
+// span1.onclick = function() {
+//     modal1.style.display = "none";
+// }
 
 // window.onclick = function(event) {
 //   if (event.target == modal1) {
@@ -197,19 +295,19 @@ span1.onclick = function() {
 
 // MODAL DE ARMAZÉNS
 
-var modal2 = document.getElementById('myModalArmazem');
+// var modal2 = document.getElementById('myModalArmazem');
 
-var btn2 = document.getElementById("myBtnArmazem");
+// var btn2 = document.getElementById("myBtnArmazem");
 
-var span2 = document.getElementsByClassName("closeModalArmazem")[0];
+// var span2 = document.getElementsByClassName("closeModalArmazem")[0];
 
-btn2.onclick = function() {
-    modal2.style.display = "block";
-}
+// btn2.onclick = function() {
+//     modal2.style.display = "block";
+// }
 
-span2.onclick = function() {
-    modal2.style.display = "none";
-}
+// span2.onclick = function() {
+//     modal2.style.display = "none";
+// }
 
 var modalProd = document.getElementById('myModalProduto');
 
@@ -353,16 +451,16 @@ $(document).ready(function() {
 })
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if(event.target == modal) {
-        modal.style.display = "none";
-    } else if (event.target == modal2) {
-        modal2.style.display = "none";
-    } else if (event.target == modalProd) {
-        modalProd.style.display = "none";
-        // javascript:history.back();
-    }
-}
+// window.onclick = function(event) {
+//     if(event.target == modal) {
+//         modal.style.display = "none";
+//     } else if (event.target == modal2) {
+//         modal2.style.display = "none";
+//     } else if (event.target == modalProd) {
+//         modalProd.style.display = "none";
+//         // javascript:history.back();
+//     }
+// }
 
 // modal2.onclick = function() {
 //     modal2.style.display = "none";
@@ -370,19 +468,19 @@ window.onclick = function(event) {
 
 // MODAL DE ARMAZÉNS MOBILE
 
-var modal3 = document.getElementById('myModalArmazem');
+// var modal3 = document.getElementById('myModalArmazem');
 
-var btn3 = document.getElementById("myBtnArmazemMobile");
+// var btn3 = document.getElementById("myBtnArmazemMobile");
 
-var span3 = document.getElementsByClassName("closeModalArmazem")[0];
+// var span3 = document.getElementsByClassName("closeModalArmazem")[0];
 
-btn3.onclick = function() {
-    modal3.style.display = "block";
-}
+// btn3.onclick = function() {
+//     modal3.style.display = "block";
+// }
 
-span3.onclick = function() {
-    modal3.style.display = "none";
-}
+// span3.onclick = function() {
+//     modal3.style.display = "none";
+// }
 
 // window.onclick = function(event) {
 //   if (event.target == modal2) {
@@ -390,9 +488,9 @@ span3.onclick = function() {
 //   }
 // }
 
-modal3.onclick = function() {
-    modal3.style.display = "none";
-}
+// modal3.onclick = function() {
+//     modal3.style.display = "none";
+// }
 
 // EFEITO INPUT CADASTRO
 

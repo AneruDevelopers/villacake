@@ -1,11 +1,11 @@
 <div class="svg-container">
     <div class="header-hero">
-        <h1>Um mercado online<br/> como você nunca viu antes</h1>
-        <p>e.conomize seu tempo. e.conomize seu dinheiro.</p>
+        <h1>Uma confeitaria online<br/> como você nunca viu antes</h1>
+        <p>Seu docinho a alguns clicks de distância.</p>
     </div>
     <div class="header-visuals">
         <div class="Iphone">
-            <img src="<?= Project::baseUrl(); ?>style/img/e-light-icon.png" alt="e.conomize"/>
+            <img src="<?= Project::baseUrl(); ?>style/img/banner/VillaCakeLog.png" alt="Logo da Villa Cake"/>
         </div>
     </div>
 </div>
