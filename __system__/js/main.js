@@ -1,36 +1,13 @@
 // TODO O JQUERY SERÁ DEPURADO DENTRO DESTA FUNÇÃO
 
 $(document).ready(function() {
-  
-    // $('.owl-carousel').owlCarousel({
-    //     loop:true,
-    //     // margin:10,
-    //     responsiveClass:true,
-    //     responsive:{
-    //         0:{
-    //             items:1,
-    //             nav:true
-    //         },
-    //         600:{
-    //             items:3,
-    //             nav:false
-    //         },
-    //         1000:{
-    //             items:5,
-    //             nav:true,
-    //             loop:false
-    //         }
-    //     }
-    // })
-
-    // $(".owl-carousel").owlCarousel();
 
     $('.loopCarousel').owlCarousel({
         items:2,
         loop:true,
         dots:false,
         nav:true,
-        margin:10,
+        margin:30,
         navContainer: '.custom-nav',
         responsiveClass:true,
         navText: [
@@ -55,7 +32,7 @@ $(document).ready(function() {
         loop:true,
         dots:false,
         nav:true,
-        margin:10,
+        margin:30,
         navContainer: '.custom-nav2',
         responsiveClass:true,
         navText: [
@@ -80,7 +57,7 @@ $(document).ready(function() {
         loop:true,
         dots:false,
         nav:true,
-        margin:10,
+        margin:30,
         navContainer: '.custom-nav3',
         responsiveClass:true,
         navText: [
@@ -99,84 +76,47 @@ $(document).ready(function() {
             }
         }
     });
+
+    $(".productImgCardLink").mouseenter(function() {
+        $('#quickShopDiv').stop().show("fast");
+    });
     
-    $('.owl-one').owlCarousel({
-      loop:false,
-      margin:5,
-      responsiveClass:true,
-      responsive:{
-          0:{
-              items:6,
-              loop:false,
-              dots: false
-          },
-          600:{
-              items:8,
-              loop:false,
-              dots: false
-          },
-          1000:{
-              items:12,
-              loop:false,
-              dots: false
-          }
-      }
-  });
-
-  $('.owl-mobile').owlCarousel({
-      loop:false,
-      margin:5,
-      responsiveClass:true,
-      responsive:{
-          0:{
-              items:6,
-              loop:false,
-              dots: false
-          },
-          600:{
-              items:8,
-              loop:false,
-              dots: false
-          },
-          850:{
-              items:12,
-              loop:false,
-              dots: false
-          }
-      }
-  });
-
-  $("#owl-demo").owlCarousel({
-
-      items:1,
-      loop:true,
-      margin:5,
-      autoplay:true,
-      autoplayTimeout:4000,
-      autoplayHoverPause:true,
-      lazyLoad: true,
-      nav:false,
-      pagination:false,
-      dots:false,
-      singleItem:true
-  });
-
-//   $('.loop').owlCarousel({
-//       center: false,
-//       items:4,
-//       loop:false,
-//       margin:8,
-//       dots:false,
-//       nav:false,
-//       responsive:{
-//           600:{
-//               items:7
-//           }
-//       }
-//   });
-  
+    $(".productImgCardLink, #quickShopDiv").mouseleave(function() {
+      if(!$('#quickShopDiv').is(':hover')){
+        $('#quickShopDiv').hide();
+      };
+    });
 });
 
+// JS do sticky header
+
+    const Header = document.querySelector("header");
+
+    const headroom = new Headroom(Header, {
+    offset: 0,
+    tolerance: {
+        up: 0,
+        down: 0
+    },
+    classes: {
+        initial: "header--fixed",
+        pinned: "slideDown",
+        unpinned: "slideUp",
+        top: "top",
+        notTop: "not-top"
+    }
+    });
+
+    headroom.init();
+
+    window.addEventListener("scroll", () => {
+    if (window.pageYOffset === 0) {
+        Header.classList.remove("slideDown");
+    }
+    });
+
+// ----
+   
 (function() {
   'use strict';
   $('.hamburger-menu').click(function (e) {

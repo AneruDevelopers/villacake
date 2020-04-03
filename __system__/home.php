@@ -87,24 +87,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>Villa Cake - Confeitaria | Início</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <!-- <link rel="icon" href="<?= Project::baseUrl(); ?>style/img/e-dark-icon.png"/> -->
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>Villa Cake: Confeitaria que faz delivery de bolos!</title>
     <link rel="stylesheet" type="text/css" media="screen" href="<?= Project::baseUrl(); ?>style/css/main.css"/>
     <link href="<?= Project::baseUrl(); ?>style/libraries/fontawesome-free-5.8.0-web/css/all.css" rel="stylesheet"/>
-    <!-- <link href="<?= Project::baseUrl(); ?>style/libraries/aos-master/dist/aos.css" rel="stylesheet"/> -->
     <link rel="stylesheet" href="<?= Project::baseUrl(); ?>style/libraries/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" type="text/css"/>
     <link rel="stylesheet" href="<?= Project::baseUrl(); ?>style/libraries/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.css" type="text/css"/>
-    <!-- <link rel="stylesheet" type="text/css" href="<?= Project::baseUrl(); ?>style/fonts/Icons/icons_pack/font/flaticon.css"/> -->
     <link rel="stylesheet" href="<?= Project::baseUrl(); ?>style/libraries/Remodal-master/dist/remodal.css" type="text/css"/>
     <link rel="stylesheet" href="<?= Project::baseUrl(); ?>style/libraries/Remodal-master/dist/remodal-default-theme.css" type="text/css"/>
 </head>
 <body>
     <div class="remodal-bg">
         <div class="l-wrapper">
-            <header class="l-headerNav" id="headerNav">
+            <header class="l-headerNav header headroom" id="headerNav header">
             <?php
                 include('functions/includes/header.php');
             ?>
@@ -115,9 +113,7 @@
                 include('functions/includes/bottom.php');
             ?>
             </div>
-
             <!-- IGNORAR POR ENQUANTO OS BANNERS NÃO ESTÃO SENDO COLOCADOS NO BANCO -->
-
             <?php
                 if (count($banners) > 0):?>
                     <!-- -------------------- -->
@@ -137,9 +133,7 @@
                     <?php
                 endif;
             ?>
-
             <!-- ---- -->
-
             <div class="l-carousel show-on-scroll">
                 <h3 class="callToSearchText">Procure as delícias em nosso <span>CARDÁPIO</span></h3>
                 <div class="searchSpace">
@@ -152,15 +146,11 @@
                         </form>
                     </div>
                 </div>
-                <hr class="searchDivLine">
+                <!-- <hr class="searchDivLine"> -->
             </div>
-            
             <!-- Title/Display Products -->
-
             <div class="l-main">
-
                 <!-- PROVISÓRIO PORQUE NÃO HÁ PRODUTOS NO BANCO -->
-
                 <div class="productCarouselDivTitle">
                     <h3 class="productCarouselTitle">
                         Bolo Caseiro
@@ -171,13 +161,50 @@
                 </div>
                 <div class="carousel-wrap">
                     <div class="loopCarousel owl-carousel owl-theme">
-                        <div class="individualCarouselCard">  </div>
-                        <div class="individualCarouselCard">  </div>
-                        <div class="individualCarouselCard">  </div>
-                        <div class="individualCarouselCard">  </div>
-                        <div class="individualCarouselCard">  </div>
-                        <div class="individualCarouselCard">  </div>
-                        <div class="individualCarouselCard">  </div>
+                        <div class="individualCarouselCard"> 
+                            <div class="porcentageDiscountDiv">
+                                <span>10% OFF</span>
+                            </div>
+                            <a href="#" class="productImgCardLink">
+                                <img class="productImg" src="<?= Project::baseUrl(); ?>style/img/Misc/cake-raspberry-white-background-cut-stuffing-leaves-1038072-wallhere.com.jpg" alt="" title="">
+                                <button id="quickShopDiv">COMPRA RÁPIDA</button>
+                            </a>
+                            <div class="productDataDiv">
+                                <h4 class="productNameTag">Torta doce de morango e framboesa</h4>
+                                <h4 class="productPriceTag">R$25.00</h4>
+                                <a href="#" class="getToShopBtn">PEGAR</a>
+                            </div>
+                        </div>
+                        <div class="individualCarouselCard"> 
+                            <div class="productImgCardDiv">
+                                
+                            </div>
+                        </div>
+                        <div class="individualCarouselCard"> 
+                            <div class="productImgCardDiv">
+                                
+                            </div>
+                        </div>
+                        <div class="individualCarouselCard"> 
+                            <div class="productImgCardDiv">
+                                
+                            </div>
+                        </div>
+                        <div class="individualCarouselCard"> 
+                            <div class="productImgCardDiv">
+                                
+                            </div>
+                        </div>
+                        <div class="individualCarouselCard"> 
+                            <div class="productImgCardDiv">
+                                
+                            </div>
+                        </div>
+                        <div class="individualCarouselCard"> 
+                            <div class="productImgCardDiv">
+                                
+                            </div>
+                        </div>
                     </div>
                     <div class="owl-theme">
                         <div class="owl-controls">
@@ -185,9 +212,7 @@
                         </div>
                     </div>
                 </div>
-
                 <!--  -->
-
                 <div class="newsDiv">
                     <div class="leftNewsDiv">
                         <h4 class="newsDivTitle">
@@ -200,9 +225,7 @@
                         </h4>
                     </div>
                 </div>
-
                 <!-- PROVISÓRIO PORQUE NÃO HÁ PRODUTOS NO BANCO -->
-
                 <div class="productCarouselDivTitle">
                     <h3 class="productCarouselTitle">
                         Bolo De Pote
@@ -227,9 +250,7 @@
                         </div>
                     </div>
                 </div>
-
                 <!--  -->
-
                 <div class="newsDiv">
                     <div class="uniqueNewsDiv">
                         <h4 class="newsDivTitle">
@@ -237,9 +258,7 @@
                         </h4>
                     </div>
                 </div>
-
                 <!-- PROVISÓRIO PORQUE NÃO HÁ PRODUTOS NO BANCO -->
-
                 <div class="productCarouselDivTitle">
                     <h3 class="productCarouselTitle">
                         Tortas doces
@@ -264,11 +283,7 @@
                         </div>
                     </div>
                 </div>
-
-                <!--  -->
-
                 <!-- NOVO MODAL -->
-
                 <div class="remodal" data-remodal-id="modal">
                     <div class="modal-content">
                         <button data-remodal-action="close" class="remodal-close"></button>
@@ -304,12 +319,11 @@
                             <p class="textModal">Olá, amigo!</p>
                             <p class="textModalBottom">Entre com seus detalhes pessoais e comece sua jornada conosco</p>
                             <div class="divLinkCad">
-                                <a class="linkCadModal" href="<?= Project::baseUrlPhp(); ?>usuario/cadastro">Cadastre-se já</a>
+                                <a class="linkCadModal" href="<?= Project::baseUrlPhp(); ?>usuario/cadastro">CADASTRE-SE JÁ</a>
                             </div>    
                         </div>
                     </div>
                 </div>
-
                 <!-- <div class="l-prods">
                     <?php
                         if (count($listSimplePromotionalProducts) > 0):?>
@@ -393,11 +407,9 @@
                     endif;
                 ?>
             </div>
-
             <?php
                 // include('functions/includes/modal.php');
             ?>
-
             <div class="l-footer id='footer'">
             <?php
                 include('functions/includes/footer.php');
@@ -413,6 +425,7 @@
         <script src="<?= Project::baseUrl(); ?>style/libraries/sweetalert2.all.min.js"></script>
         <script src="<?= Project::baseUrl(); ?>style/libraries/OwlCarousel2-2.3.4/dist/owl.carousel.js"></script>
         <script src="<?= Project::baseUrl(); ?>style/libraries/Remodal-master/dist/remodal.min.js"></script>
+        <script src="<?= Project::baseUrl(); ?>style/libraries/headroom/headroom.js"></script>
         <script src="<?= Project::baseUrl(); ?>js/util.js"></script>
         <script src="<?= Project::baseUrl(); ?>js/verificaLogin.js"></script>
         <script src="<?= Project::baseUrl(); ?>js/favoritos.js"></script>
@@ -437,6 +450,7 @@
                 unset($_SESSION['msg']);
             endif;
         ?>
+
     </div>
 </body>
 </html>

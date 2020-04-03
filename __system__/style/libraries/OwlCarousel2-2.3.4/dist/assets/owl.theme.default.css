@@ -14,13 +14,13 @@
     color: #FFF;
     font-size: 14px;
     margin: 5px;
-    background: #f64644;
+    background: #D6D6D6;
     display: inline-block;
     cursor: pointer;
     border-radius: 2px;
-    transition: ease-in-out 100ms; }
+    transition: ease-in-out 100ms transform; }
     .owl-theme .owl-nav [class*='owl-']:hover {
-      background: #f64644;
+      background: #D6D6D6;
       color: #FFF;
       text-decoration: none;
       transform: scale(1.1); }

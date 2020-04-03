@@ -13,42 +13,20 @@
     src: url('../fonts/Montserrat/Montserrat-Regular.ttf');
 }
 
-@font-face {
-    font-family: "Raleway";
-    src: url('../fonts/Raleway/Raleway-Light.ttf');
-}
-
-@font-face {
-    font-family: "Raleway-Medium";
-    src: url('../fonts/Raleway/Raleway-Medium.ttf');
-}
-
-@font-face {
-    font-family: "Raleway-Black";
-    src: url('../fonts/Raleway/Raleway-Black.ttf');
-}
-
-
 body {
     padding: 0 0;
     margin: 0 0;
-    font-family: "Montserrat-Medium";
+    font-family: "Montserrat-Regular";
+    background-color: #f1f1f1;
 }
 
 html, body{
-    height: 100%;
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
     font-size: 14px;
 }
-  
-@-moz-document url-prefix() {
-    body {
-        font-weight: lighter !important;
-    }
-  }
 
 textarea,
 input.text,
@@ -66,7 +44,7 @@ border-radius: 0;
     display: grid;
 }
 
-/* TELA MONITOR GRANDE */
+/* TELAS GRANDES (DESKTOPS & TV'S) */
 
 @media only screen and (max-width: 1999px) and (min-width: 1500px) {
 
@@ -118,15 +96,9 @@ border-radius: 0;
         box-shadow: 0px 10px 13px -7px #000000, 5px 5px 7px 5px rgba(255,255,255,0);
     }
 
-    .l-carousel.is-visible {
-        opacity: 1;
-        -webkit-transform: rotateZ(0deg);
-          transform: rotateZ(0deg);
-    }
-
     .l-main {
         grid-area: main;
-        background: #ffffff;
+        background: #f1f1f1;
         margin-bottom: 6rem;
     }
 
@@ -183,15 +155,65 @@ border-radius: 0;
         font-weight: normal;
     }
 
-    /* CEP ANSWER */
+    /* Header */
 
-    .answer-cep {
-        position: absolute;
-        right: 0;
+    /* Sticky header (efeito de aparecer e desaparecer do header) */
+
+    .header--fixed {
         top: 0;
+        width: 100%;
     }
 
-    /* Header principal */
+    .header--fixed.top {
+        transition: none;
+        transform: translateY(0);
+    }
+
+    .header--fixed.not-top {
+        position: fixed;
+        transform: translateY(-100%);
+        height: 8.8rem;
+        z-index: 99;
+        -webkit-box-shadow: 0px 10px 13px -7px #818181, 5px 5px 15px 5px rgba(0,0,0,0); 
+        box-shadow: 0px 10px 13px -7px #818181, 5px 5px 15px 5px rgba(0,0,0,0);
+    }
+
+    .header--fixed.slideDown.not-top {
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(0);
+    }
+
+    .header--fixed.slideDown.top {
+        transition: transform 0.3s ease-in-out;
+        position: fixed;
+    }
+
+    .header--fixed.slideUp.not-top {
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(-100%);
+    }
+
+    .header--fixed.slideUp.top {
+        transform: translateY(-100%);
+        position: absolute;
+    }
+    
+    .l-headerNav {
+        will-change: transform;
+        transition: transform 200ms linear;
+    }
+
+    .l-headerNav--pinned {
+        transform: translateY(0%);
+        display: block;
+    }
+
+    .l-headerNav--unpinned {
+        transform: translateY(-100%);
+        display: none;
+    }
+
+    /* Conteúdo do header */
 
     .wrapperAdjusterDiv {
         position: relative;
@@ -263,7 +285,8 @@ border-radius: 0;
 
     .headerMenuDiv li a {
         font-size: 16px;
-        color: #000;
+        font-family: 'Montserrat-Medium';
+        color: #36454f;
         text-decoration: none;
         transition: all 0.45s;
     }
@@ -293,7 +316,7 @@ border-radius: 0;
         height: 100%;
    }
 
-    /* Área do usuário no header */
+    /* Botões de acesso do header */
 
     .topNavCity {
         display: none; 
@@ -325,12 +348,12 @@ border-radius: 0;
         text-align: center;
         display: inline-block;
         background: #ffffff;
-        border: 1px solid #000;
+        border: 1px solid #36454f;
         border-radius: 2px;
         padding-left: .2rem;
         cursor: pointer;
-        -webkit-box-shadow: 0px 10px 13px -7px #9b9898; 
-        box-shadow: 0px 10px 13px -7px #9b9898;
+        -webkit-box-shadow: 0px 10px 13px -7px #9b9a9a, 5px 5px 15px 5px rgba(117, 117, 117, 0); 
+        box-shadow: 0px 10px 13px -7px #9b9a9a, 5px 5px 15px 5px rgba(117, 117, 117, 0);
     }
 
     .celulaTopNavCity {
@@ -344,12 +367,12 @@ border-radius: 0;
         border-radius: 2px;
         cursor: pointer;
         border: 1px solid #f64644;
-        -webkit-box-shadow: 0px 10px 13px -7px #9b9898; 
-        box-shadow: 0px 10px 13px -7px #9b9898;
+        -webkit-box-shadow: 0px 10px 13px -7px #9b9a9a, 5px 5px 15px 5px rgba(117, 117, 117, 0); 
+        box-shadow: 0px 10px 13px -7px #9b9a9a, 5px 5px 15px 5px rgba(117, 117, 117, 0);
     }
 
     .linkMenuTopNavCity {
-        color: #000;
+        color: #ffffff;
         margin: 0;
         font-family: 'Montserrat-Medium';
         position: relative;
@@ -358,11 +381,11 @@ border-radius: 0;
         font-size: 12px;
     }
 
-    .linkMenuTopNavCity i {
+    /* .linkMenuTopNavCity i {
         color: #9C45EB;
         position: relative;
         font-size: 16px;
-    }
+    } */
 
     .linkMenuTopNav {
         text-decoration: none;
@@ -370,26 +393,25 @@ border-radius: 0;
         top: .7rem;
         font-size: 12px;
         font-family: "Montserrat-Medium";
-        color: #0F0617;
+        color: #36454f;
     }
 
     .linkMenuTopNav i {
         font-size: 16px;
         position: relative;
-        color: #000;
+        color: #36454f;
     }
     
     .celulaTopNav:hover {
-        color: #ffffff;
-        background: #000;
+        background: #36454f;
         border: none;
         text-decoration: none;
         transition: background 100ms ease-in-out;
-        border: 1px solid #000;
+        border: 1px solid #36454f;
     }
 
     .celulaTopNav:hover .linkMenuTopNav, .celulaTopNav:hover .linkMenuTopNav i{
-        color: #f64644;
+        color: #ffffff;
     }
 
     .celulaTopNavCity:hover > .linkMenuTopNavCity .leftBack {
@@ -401,7 +423,13 @@ border-radius: 0;
         position: relative;
     }
 
-    /* Barra de pesquisa */
+    /* Área da barra de pesquisa */
+
+    .l-carousel.is-visible {
+        opacity: 1;
+        -webkit-transform: rotateZ(0deg);
+          transform: rotateZ(0deg);
+    }
 
     .callToSearchText {
         font-family: 'Montserrat-Medium';
@@ -483,7 +511,7 @@ border-radius: 0;
         margin: auto;
     }
 
-    /* Área dos produtos no carrosel */
+    /* Área dos conteúdos principais */
 
     .productCarouselDivTitle {
         position: relative;
@@ -498,12 +526,14 @@ border-radius: 0;
         font-weight: bold;
         margin-bottom: 0;
         margin-top: 3.5rem;
+        color: #36454f;
     }
 
     .productCarouselSubTitle {
         font-family: 'Montserrat-Light';
         font-size: 16px;
         margin-top: .5rem;
+        color: #36454f;
     }
 
     .carousel-wrap {
@@ -518,10 +548,12 @@ border-radius: 0;
     }
 
     .individualCarouselCard {
-        border: solid 1px #f5c6cb;
-        text-align: center;
+        background-color: #ffffff;
         position: relative;
         height: 25rem;
+        -webkit-box-shadow: 0px 10px 13px -7px #9b9a9a, 5px 5px 15px 5px rgba(117, 117, 117, 0); 
+        box-shadow: 0px 10px 13px -7px #9b9a9a, 5px 5px 15px 5px rgba(117, 117, 117, 0);
+        border-radius: 2px;
     }
 
     .custom-nav, .custom-nav2, .custom-nav3 {
@@ -542,7 +574,7 @@ border-radius: 0;
 
     .custom-nav .owl-prev i, .custom-nav .owl-next i, .custom-nav2 .owl-prev i, .custom-nav2 .owl-next i, .custom-nav3 .owl-prev i, .custom-nav3 .owl-next i {
         font-size: 2.5rem;
-        color: #000;
+        color: #36454f;
     }
     .custom-nav .owl-prev, .custom-nav2 .owl-prev, .custom-nav3 .owl-prev {
         left: -3%;
@@ -550,6 +582,90 @@ border-radius: 0;
     
     .custom-nav .owl-next, .custom-nav2 .owl-next, .custom-nav3 .owl-next {
         right: -3%;
+    }
+
+    .productImg {
+        display:block;
+        width:50%;
+        position:relative;
+        left: 22.5%;
+        clear: both;
+    }
+
+    #quickShopDiv {
+        display: none;
+        position: relative;
+        top: -9rem;
+        width: 50%;
+        left: 25%;
+        height: 2.5rem;
+        color: #36454f;
+        margin: 0;
+        float: left;
+        border: solid 2px #37353556;
+        background: rgba(204, 204, 204, 0.5);
+        cursor: pointer;
+        overflow: hidden;
+        margin-bottom: -3rem;
+        font-family: 'Montserrat-Regular';
+        font-weight: bold;
+        z-index: 10;
+    }
+
+    .porcentageDiscountDiv {
+        position: relative;
+        float: left;
+        width: 26%;
+        left: 0%;
+        top: .5rem;
+        z-index: 2;
+        background-color: #f64644;
+        height: auto;
+        text-align: center;
+        font-style: italic;
+        overflow: hidden;
+        clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
+        padding-right: 4%;
+    }
+
+    .porcentageDiscountDiv span {
+        font-family: 'Montserrat-Medium';
+        color: #ffffff;
+    }
+
+    .productDataDiv {
+        position: relative;
+        width: 90%;
+        left: 5%;
+        border-top: solid 2px #f1f1f1;
+        margin: 0;
+        clear: right;
+    }
+
+    .productNameTag {
+        font-size: 13px;
+        margin-top: .4rem;
+        margin-bottom: 0rem;
+        height: 2.8rem;
+        color: #888;
+    }
+
+    .productPriceTag {
+        font-size: 16px;
+        margin-top: 0rem;
+        margin-bottom: .4rem;
+        height: 2rem;
+        color: #f64644;
+    }
+
+    .getToShopBtn {
+        position: relative;
+        background-color: #36454f;
+        color: #ffffff;
+        font-family: 'Montserrat-Medium';
+        text-decoration: none;
+        padding: .3rem 40%;
+        bottom: 0;
     }
 
     /* Área das novidades e publicidade */
@@ -593,31 +709,181 @@ border-radius: 0;
         height: 100%;
     }
 
-    /* --- */
-
-    /* ERROR 404 */
+    /* Modal de login */
     
-    .Errordiv {
+    .modal-content {
+        background-color: #fff;
+        width: 100%;
+        border-radius: 2px;
+        height: 38rem;
+        position: relative;
+    }
+
+    /* Lado esquerdo do modal de login */
+
+    .modalLeftContent {
         position: relative;
         width: 50%;
-        padding: 3rem 0;
-        margin: 0 auto;
-        font-family: "Raleway-Medium";
-    }
-    .ErrorTitle {
-        width: 100%;
-        text-align: center;
-        margin: 0;
-    }
-    .Errop {
-        width: 100%;
-        text-align: center;
-        margin-top: 2rem;
-        margin-bottom: 0;
-        color: #333;
+        height: 100%;
+        float: left;
     }
 
-    /* MENU CAROUSEL */
+    .modalLeftContent form {
+        position: relative;
+        height: 90%;
+        top: 5%;
+        padding-top: 5rem;
+    }
+
+    .titleModalLogin {
+        font-family: "Montserrat-Regular";
+        text-align: center;
+        margin: .4rem;
+        margin-bottom: 3rem;
+        font-size: 26px;
+        color: #f64644;
+    }
+
+    .outsideSecInputCadModal {
+        width: 70%;
+        height: 4rem;
+        margin-bottom: 1rem;
+        left: 15%;
+        position: relative;
+    }
+
+    .outsideSecInputCadPlus {
+        width: 80%;
+        height: 3rem;
+        margin-bottom: .5rem;
+        left: -26.5%;
+        top: 4rem;
+        position: relative;
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        -webkit-box-shadow: -11px 10px 44px -7px rgba(173,168,173,0.65);
+        -moz-box-shadow: -11px 10px 44px -7px rgba(173,168,173,0.65);
+        box-shadow: -11px 10px 44px -7px rgba(173,168,173,0.65);
+    }
+
+    .mantConLoginModal {
+        position: relative;
+        float: left;
+        width: 50%;
+        left: 15%;
+        text-align: left;
+        margin-top: 1rem;
+    }
+
+    .radioCadModal {
+        width: 16px;
+        height: 16px;
+        margin: 0;
+    }
+
+    .labelCadSexRadioModal {
+        font-size: 14px;
+        color: #000;
+        position: relative;
+        top: -2px;
+        padding-left: 2%;
+    }
+
+    .btnSend {
+        position: relative;
+        background: #f64644;
+        border: none;
+        width: 30%;
+        height: 2.8rem;
+        border-radius: 2px;
+        font-family: "Montserrat-Medium";
+        font-size: 16px;
+        color: #ffffff;
+        top: -.8rem;
+        left: -5%;
+        -webkit-box-shadow: -1px 6px 13px -2px rgba(156,156,156,1);
+        -moz-box-shadow: -1px 6px 13px -2px rgba(156,156,156,1);
+        box-shadow: -1px 6px 13px -2px rgba(156,156,156,1);
+        outline: none;
+        cursor: pointer;
+        margin-top: 1rem;
+    }
+
+    .btnSend:hover {
+        background-color: #36454f;
+        color: #ffffff;
+        transition: 100ms ease-in-out color;
+        transition: 100ms ease-in-out background;
+    }
+
+    .linkForgotPassword {
+        position: relative;
+        text-align: center;
+        top: 1rem;
+    }
+
+    .linkForgotPassword a {
+        text-decoration: underline;
+        color: #000;
+        font-size: 14px;
+    }
+
+    /* Lado direito do modal de login */
+
+    .modalRightContent {
+        position: relative;
+        width: 50%;
+        height: 100%;
+        float: right;
+        background-image: url("../img/banner/Large-DarkTriangles.svg");
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+    }
+
+    .textModal {
+        text-align: center;
+        font-size: 28px;
+        margin: .4rem 0;
+        position: relative;
+        top: 10rem;
+        color: #ffffff;
+        font-family: "Montserrat-Medium";
+    }
+
+    .textModalBottom {
+        text-align: center;
+        font-size: 14px;
+        margin: 1rem 0;
+        position: relative;
+        top: 10rem;
+        color: #ffffff;
+        font-family: "Montserrat-Medium";
+        width: 100%;
+        line-height: 24px;
+    }
+
+    .divLinkCad {
+        border: solid 2px #ffffff;
+        background: #f64644;
+        border-radius: 2px;
+        width: 50%;
+        height: 2.8rem;
+        left: 25%;
+        top: 10rem;
+        position: relative;
+        text-align: center;
+        line-height: 40px;
+    }
+
+    .linkCadModal {
+        font-family: "Montserrat-Medium";
+        font-size: 16px;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    /* Carrosel do mobile (será alterado) */
 
     .menuCarousel {
         background: transparent;
@@ -815,181 +1081,7 @@ border-radius: 0;
         cursor: pointer;
     }
 
-    /* Modal de login */
-    
-    .modal-content {
-        background-color: #fff;
-        width: 100%;
-        border-radius: 2px;
-        height: 38rem;
-        position: relative;
-    }
-
-    /* Lado esquerdo do modal */
-
-    .modalLeftContent {
-        position: relative;
-        width: 50%;
-        height: 100%;
-        float: left;
-    }
-
-    .modalLeftContent form {
-        position: relative;
-        height: 90%;
-        top: 5%;
-        padding-top: 5rem;
-    }
-
-    .titleModalLogin {
-        font-family: "Montserrat-Regular";
-        text-align: center;
-        margin: .4rem;
-        margin-bottom: 3rem;
-        font-size: 26px;
-        color: #f64644;
-    }
-
-    .outsideSecInputCadModal {
-        width: 70%;
-        height: 4rem;
-        margin-bottom: 1rem;
-        left: 15%;
-        position: relative;
-    }
-
-    .outsideSecInputCadPlus {
-        width: 80%;
-        height: 3rem;
-        margin-bottom: .5rem;
-        left: -26.5%;
-        top: 4rem;
-        position: relative;
-        background: #ffffff;
-        padding: 30px;
-        border-radius: 10px;
-        -webkit-box-shadow: -11px 10px 44px -7px rgba(173,168,173,0.65);
-        -moz-box-shadow: -11px 10px 44px -7px rgba(173,168,173,0.65);
-        box-shadow: -11px 10px 44px -7px rgba(173,168,173,0.65);
-    }
-
-    .mantConLoginModal {
-        position: relative;
-        float: left;
-        width: 50%;
-        left: 15%;
-        text-align: left;
-        margin-top: 1rem;
-    }
-
-    .radioCadModal {
-        width: 16px;
-        height: 16px;
-        margin: 0;
-    }
-
-    .labelCadSexRadioModal {
-        font-size: 14px;
-        color: #000;
-        position: relative;
-        top: -2px;
-        padding-left: 2%;
-    }
-
-    .btnSend {
-        position: relative;
-        background: #f64644;
-        border: none;
-        width: 30%;
-        height: 2.8rem;
-        border-radius: 2px;
-        font-family: "Montserrat-Medium";
-        font-size: 16px;
-        color: #ffffff;
-        top: -.8rem;
-        left: -5%;
-        -webkit-box-shadow: -1px 6px 13px -2px rgba(156,156,156,1);
-        -moz-box-shadow: -1px 6px 13px -2px rgba(156,156,156,1);
-        box-shadow: -1px 6px 13px -2px rgba(156,156,156,1);
-        outline: none;
-        cursor: pointer;
-        margin-top: 1rem;
-    }
-
-    .btnSend:hover {
-        background: #000;
-        color: #f64644;
-        transition: 100ms ease-in-out color;
-        transition: 100ms ease-in-out background;
-    }
-
-    .linkForgotPassword {
-        position: relative;
-        text-align: center;
-        top: 1rem;
-    }
-
-    .linkForgotPassword a {
-        text-decoration: underline;
-        color: #000;
-        font-size: 14px;
-    }
-
-    /* Lado direito do modal */
-
-    .modalRightContent {
-        position: relative;
-        width: 50%;
-        height: 100%;
-        float: right;
-        background-image: url("../img/banner/Large-DarkTriangles.svg");
-        border-bottom-right-radius: 2px;
-        border-top-right-radius: 2px;
-    }
-
-    .textModal {
-        text-align: center;
-        font-size: 28px;
-        margin: .4rem 0;
-        position: relative;
-        top: 10rem;
-        color: #ffffff;
-        font-family: "Montserrat-Medium";
-    }
-
-    .textModalBottom {
-        text-align: center;
-        font-size: 14px;
-        margin: 1rem 0;
-        position: relative;
-        top: 10rem;
-        color: #ffffff;
-        font-family: "Montserrat-Medium";
-        width: 100%;
-        line-height: 24px;
-    }
-
-    .divLinkCad {
-        border: solid 2px #ffffff;
-        background: #f64644;
-        border-radius: 2px;
-        width: 50%;
-        height: 2.8rem;
-        left: 25%;
-        top: 10rem;
-        position: relative;
-        text-align: center;
-        line-height: 40px;
-    }
-
-    .linkCadModal {
-        font-family: "Montserrat-Medium";
-        font-size: 14px;
-        color: #ffffff;
-        text-decoration: none;
-    }
-
-    /* ----- */
+    /* -- */
 
     .labelInput {
         font-family: "Raleway-Medium";
@@ -1665,7 +1757,7 @@ border-radius: 0;
     }
       
     .Iphone::before {
-        background-color: #000;
+        background-color: #36454f;
         width: 10rem;
         padding-top: 150.5%;
     }
@@ -1725,7 +1817,7 @@ border-radius: 0;
 
     .linkListFooter {
         text-decoration: none;
-        color: #000;
+        color: #36454f;
         font-size: 12px;
     }
 
@@ -1767,12 +1859,12 @@ border-radius: 0;
 
     .linkListSocialMedia {
         text-decoration: none;
-        color: #000;
+        color: #36454f;
         font-size: 27px;
         margin: .5rem;
     }
 
-    /* BOTTOM FOOTER */
+    /* Área do copyright */
 
     .copyright {
         position: relative;
@@ -1782,7 +1874,7 @@ border-radius: 0;
         font-size: 13px;
         margin: .3rem;
         top: 1rem;
-        font-family: "Montserrat-Regular";
+        font-family: "Montserrat-Medium";
     }
 
     .copyrightReserved {
@@ -1792,7 +1884,7 @@ border-radius: 0;
         color: #ffffff;
         font-size: 13px;
         margin: .3rem;
-        font-family: "Montserrat-Regular";
+        font-family: "Montserrat-Medium";
     }
 
     .copyrightReserved a {
@@ -4540,6 +4632,37 @@ border-radius: 0;
    
     }
 
+    /* CEP ANSWER */
+
+    .answer-cep {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    /* ERROR 404 */
+    
+    .Errordiv {
+        position: relative;
+        width: 50%;
+        padding: 3rem 0;
+        margin: 0 auto;
+        font-family: "Raleway-Medium";
+    }
+    .ErrorTitle {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+    .Errop {
+        width: 100%;
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 0;
+        color: #333;
+    }
+
+
 /* TELAS DE NOTEBOOK, IPAD PRO VERTICAL E HORIZONTAL */
 
 @media only screen and (max-width: 1499px) and (min-width: 1024px) {
@@ -4600,8 +4723,8 @@ border-radius: 0;
 
     .l-main {
         grid-area: main;
-        background: #ffffff;
         margin-bottom: 6rem;
+        background: #f1f1f1;
     }
 
     .l-footer {
@@ -4667,6 +4790,64 @@ border-radius: 0;
 
     /* Header principal */
 
+    /* Sticky header (efeito de aparecer e desaparecer do header) */
+
+    .header--fixed {
+        top: 0;
+        width: 100%;
+    }
+
+    .header--fixed.top {
+        transition: none;
+        transform: translateY(0);
+    }
+
+    .header--fixed.not-top {
+        position: fixed;
+        transform: translateY(-100%);
+        height: 8.8rem;
+        z-index: 99;
+        -webkit-box-shadow: 0px 10px 13px -7px #818181, 5px 5px 15px 5px rgba(0,0,0,0); 
+        box-shadow: 0px 10px 13px -7px #818181, 5px 5px 15px 5px rgba(0,0,0,0);
+    }
+
+    .header--fixed.slideDown.not-top {
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(0);
+    }
+
+    .header--fixed.slideDown.top {
+        transition: transform 0.3s ease-in-out;
+        position: fixed;
+    }
+
+    .header--fixed.slideUp.not-top {
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(-100%);
+    }
+
+    .header--fixed.slideUp.top {
+        transform: translateY(-100%);
+        position: absolute;
+    }
+    
+    .l-headerNav {
+        will-change: transform;
+        transition: transform 200ms linear;
+    }
+
+    .l-headerNav--pinned {
+        transform: translateY(0%);
+        display: block;
+    }
+
+    .l-headerNav--unpinned {
+        transform: translateY(-100%);
+        display: none;
+    }
+
+    /* Conteúdo do header */
+
     .wrapperAdjusterDiv {
         position: relative;
         width: 83.33333333%;
@@ -4719,7 +4900,8 @@ border-radius: 0;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
+        width: 86%;
+        left: 7%;
         margin: 0;
         padding: 0;
         list-style: none;
@@ -4799,12 +4981,12 @@ border-radius: 0;
         text-align: center;
         display: inline-block;
         background: #ffffff;
-        border: 1px solid #000;
+        border: 1px solid #36454f;
         border-radius: 2px;
         padding-left: .2rem;
         cursor: pointer;
-        -webkit-box-shadow: 0px 10px 13px -7px #9b9898; 
-        box-shadow: 0px 10px 13px -7px #9b9898;
+        -webkit-box-shadow: 0px 10px 13px -7px #9b9a9a, 5px 5px 15px 5px rgba(117, 117, 117, 0); 
+        box-shadow: 0px 10px 13px -7px #9b9a9a, 5px 5px 15px 5px rgba(117, 117, 117, 0);
     }
 
     .celulaTopNavCity {
@@ -4818,12 +5000,12 @@ border-radius: 0;
         border-radius: 2px;
         cursor: pointer;
         border: 1px solid #f64644;
-        -webkit-box-shadow: 0px 10px 13px -7px #9b9898; 
-        box-shadow: 0px 10px 13px -7px #9b9898;
+        -webkit-box-shadow: 0px 10px 13px -7px #9b9a9a, 5px 5px 15px 5px rgba(117, 117, 117, 0); 
+        box-shadow: 0px 10px 13px -7px #9b9a9a, 5px 5px 15px 5px rgba(117, 117, 117, 0);
     }
 
     .linkMenuTopNavCity {
-        color: #000;
+        color: #ffffff;
         margin: 0;
         font-family: 'Montserrat-Medium';
         position: relative;
@@ -4832,11 +5014,11 @@ border-radius: 0;
         font-size: 10px;
     }
 
-    .linkMenuTopNavCity i {
+    /* .linkMenuTopNavCity i {
         color: #9C45EB;
         position: relative;
         font-size: 14px;
-    }
+    } */
 
     .linkMenuTopNav {
         text-decoration: none;
@@ -4844,26 +5026,26 @@ border-radius: 0;
         top: .7rem;
         font-size: 10px;
         font-family: "Montserrat-Medium";
-        color: #0F0617;
+        color: #36454f;
     }
 
     .linkMenuTopNav i {
         font-size: 14px;
         position: relative;
-        color: #000;
+        color: #36454f;
     }
     
     .celulaTopNav:hover {
         color: #ffffff;
-        background: #000;
+        background: #36454f;
         border: none;
         text-decoration: none;
         transition: background 100ms ease-in-out;
-        border: 1px solid #000;
+        border: 1px solid #36454f;
     }
 
     .celulaTopNav:hover .linkMenuTopNav, .celulaTopNav:hover .linkMenuTopNav i{
-        color: #f64644;
+        color: #ffffff;
     }
 
     .celulaTopNavCity:hover > .linkMenuTopNavCity .leftBack {
@@ -4968,16 +5150,18 @@ border-radius: 0;
 
     .productCarouselTitle {
         font-family: 'Montserrat-Medium';
-        font-size: 30px;
+        font-size: 28px;
         font-weight: bold;
         margin-bottom: 0;
         margin-top: 3.5rem;
+        color: #36454f;
     }
 
     .productCarouselSubTitle {
         font-family: 'Montserrat-Light';
-        font-size: 16px;
+        font-size: 15px;
         margin-top: .5rem;
+        color: #36454f;
     }
 
     .carousel-wrap {
@@ -4992,10 +5176,12 @@ border-radius: 0;
     }
 
     .individualCarouselCard {
-        border: solid 1px #f5c6cb;
-        text-align: center;
+        background-color: #ffffff;
         position: relative;
-        height: 25rem;
+        min-height: 25rem;
+        -webkit-box-shadow: 0px 10px 13px -7px #9b9a9a, 5px 5px 15px 5px rgba(117, 117, 117, 0); 
+        box-shadow: 0px 10px 13px -7px #9b9a9a, 5px 5px 15px 5px rgba(117, 117, 117, 0);
+        border-radius: 2px;
     }
 
     .custom-nav, .custom-nav2, .custom-nav3 {
@@ -5016,7 +5202,7 @@ border-radius: 0;
 
     .custom-nav .owl-prev i, .custom-nav .owl-next i, .custom-nav2 .owl-prev i, .custom-nav2 .owl-next i, .custom-nav3 .owl-prev i, .custom-nav3 .owl-next i {
         font-size: 2.5rem;
-        color: #000;
+        color: #36454f;
     }
     .custom-nav .owl-prev, .custom-nav2 .owl-prev, .custom-nav3 .owl-prev {
         left: -3%;
@@ -5025,6 +5211,92 @@ border-radius: 0;
     .custom-nav .owl-next, .custom-nav2 .owl-next, .custom-nav3 .owl-next {
         right: -3%;
     }
+
+    .productImg {
+        display:block;
+        width:50%;
+        position:relative;
+        left: 22.5%;
+        clear: both;
+    }
+
+    #quickShopDiv {
+        display: none;
+        position: relative;
+        top: -9rem;
+        width: 50%;
+        left: 25%;
+        height: 2.5rem;
+        color: #36454f;
+        margin: 0;
+        float: left;
+        border: solid 2px #37353556;
+        background: rgba(204, 204, 204, 0.5);
+        cursor: pointer;
+        overflow: hidden;
+        margin-bottom: -3rem;
+        font-family: 'Montserrat-Regular';
+        font-weight: bold;
+        z-index: 10;
+    }
+
+    .porcentageDiscountDiv {
+        position: relative;
+        float: left;
+        width: 26%;
+        left: 0%;
+        top: .5rem;
+        z-index: 2;
+        background-color: #f64644;
+        height: auto;
+        text-align: center;
+        font-style: italic;
+        overflow: hidden;
+        clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
+        padding-right: 4%;
+    }
+
+    .porcentageDiscountDiv span {
+        font-family: 'Montserrat-Medium';
+        color: #ffffff;
+    }
+
+    .productDataDiv {
+        position: relative;
+        width: 90%;
+        left: 5%;
+        border-top: solid 2px #f1f1f1;
+        margin: 0;
+        clear: right;
+    }
+
+    .productNameTag {
+        font-size: 13px;
+        margin-top: .4rem;
+        margin-bottom: 0rem;
+        height: 2.8rem;
+        color: #888;
+    }
+
+    .productPriceTag {
+        font-size: 16px;
+        margin-top: 0rem;
+        margin-bottom: .4rem;
+        height: 2rem;
+        color: #f64644;
+    }
+
+    .getToShopBtn {
+        position: relative;
+        background-color: #36454f;
+        color: #ffffff;
+        font-family: 'Montserrat-Medium';
+        text-decoration: none;
+        padding: .3rem 40%;
+        bottom: 0;
+    }
+
+
 
     /* Área das novidades e publicidade */
 
@@ -6139,7 +6411,7 @@ border-radius: 0;
     }
       
     .Iphone::before {
-        background-color: #000;
+        background-color: #36454f;
         width: 10rem;
         padding-top: 150.5%;
     }
@@ -6199,7 +6471,7 @@ border-radius: 0;
 
     .linkListFooter {
         text-decoration: none;
-        color: #000;
+        color: #36454f;
         font-size: 12px;
     }
 
@@ -6241,12 +6513,12 @@ border-radius: 0;
 
     .linkListSocialMedia {
         text-decoration: none;
-        color: #000;
+        color: #36454f;
         font-size: 27px;
         margin: .5rem;
     }
 
-    /* BOTTOM FOOTER */
+    /* Área do copyright */
 
     .copyright {
         position: relative;
@@ -6256,7 +6528,7 @@ border-radius: 0;
         font-size: 13px;
         margin: .3rem;
         top: 1rem;
-        font-family: "Montserrat-Regular";
+        font-family: "Montserrat-Medium";
     }
 
     .copyrightReserved {
@@ -6266,7 +6538,7 @@ border-radius: 0;
         color: #ffffff;
         font-size: 13px;
         margin: .3rem;
-        font-family: "Montserrat-Regular";
+        font-family: "Montserrat-Medium";
     }
 
     .copyrightReserved a {
@@ -9249,7 +9521,7 @@ border-radius: 0;
         text-align: center;
         display: inline-block;
         background: #ffffff;
-        border-left: 1px solid #0F0617;
+        border-left: 1px solid #36454f;
         padding-left: .2rem;
         top: .2rem;
     }
@@ -9261,7 +9533,7 @@ border-radius: 0;
         text-align: center;
         list-style: none;
         display: inline-block;
-        background: #0F0617;
+        background: #36454f;
         border-radius: 3px;
         top: .2rem;
     }
@@ -10353,7 +10625,7 @@ border-radius: 0;
     }
       
     .Iphone::before {
-        background-color: #9C45EB;
+        background-color: #36454f;
         width: 9rem;
         padding-top: 150.5%;
     }
@@ -10403,7 +10675,7 @@ border-radius: 0;
 
     .linkListFooter {
         text-decoration: none;
-        color: #ffffff;
+        color: #36454f;
         font-size: 12px;
     }
 
